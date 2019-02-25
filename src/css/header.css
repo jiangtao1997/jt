@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/*最外框*/
+.Kuang {
+  width: 100%;
+}
+
+/*页面顶部*/
+.top {
+  width: 100%;
+  height: 30px;
+  background: black;
+  font-size: 12px;
+  color: #ccc;
+  line-height: 30px;
+}
+
+/*左边导航*/
+.top_left {
+  float: left;
+  margin-left: 80px;
+}
+.top_left .top_left-ul {
+  height: 30px;
+}
+.top_left .top_left-ul .top_left-li {
+  float: left;
+  margin-right: 20px;
+}
+
+/*右边导航*/
+.top_right {
+  float: right;
+  margin-right: 70px;
+}
+.top_right .top_right-ul {
+  height: 30px;
+}
+.top_right .top_right-ul .top_right-li {
+  float: left;
+  margin-right: 20px;
+}
+
+/*//页面头部  (包括logo和搜索)*/
+.header {
+  width: 100%;
+  height: 142px;
+}
+
+/*logo和搜索部分*/
+.logo {
+  width: 80%;
+  height: 88px;
+}
+.logo .logo-img {
+  width: 237px;
+  height: 88px;
+  background: url("https://img0.fengqucdn.com/cmsres/20170329/030eede1-1185-4a2d-a2b6-c9c5a43316df.svg") no-repeat;
+  background-position: 0px -10px;
+  background-size: 100% 120px;
+  float: left;
+  margin-left: 80px;
+}
+
+/*搜索部分*/
+.logo-sousuo {
+  width: 412px;
+  height: 63px;
+  float: right;
+  margin-right: 0px;
+  margin-top: 23px;
+}
+.logo-sousuo .logo-input {
+  width: 334px;
+  height: 36px;
+  border: 2px #E73735 solid;
+}
+.logo-sousuo .logo-input input {
+  width: 304px;
+  height: 36px;
+  padding: 0 15px;
+  border: none;
+}
+.logo-sousuo .logo-input a {
+  text-align: center;
+  line-height: 40px;
+  display: block;
+  width: 76px;
+  height: 40px;
+  background-color: #E73735;
+  color: white;
+  margin-left: 335px;
+  margin-top: -38px;
+}
+.logo-sousuo .logo-ul {
+  padding-top: 9px;
+  overflow: hidden;
+}
+.logo-sousuo .logo-ul .logo-li {
+  font-size: 12px;
+  float: left;
+  padding: 0 9px;
+  border-left: 1px solid #ccc;
+}
+.logo-sousuo .logo-ul .logo-li a {
+  color: #666;
+}
+.logo-sousuo .logo-ul .logo-li:nth-of-type(1) {
+  border-left: none;
+  padding-left: 0;
+}
+
+/*购物车*/
+.logo-gwc {
+  width: 180px;
+  height: 38px;
+  margin-left: 432px;
+  margin-top: -61px;
+}
+.logo-gwc a {
+  width: 100%;
+  height: 100%;
+  background-color: #f7f7f7;
+  display: inline-block;
+}
+.logo-gwc a .gwc-span1 {
+  display: inline-block;
+  width: 54px;
+  height: 33px;
+  float: left;
+  margin-top: 3px;
+  margin-left: 2px;
+  background: white;
+  position: relative;
+}
+.logo-gwc a .gwc-span1 span {
+  width: 23px;
+  height: 24px;
+  display: inline-block;
+  position: absolute;
+  background: red;
+  left: 10px;
+  top: -20px;
+  background: url("../img/header.png") no-repeat;
+  background-position: -10px -103px;
+}
+.logo-gwc a .gwc-span1 em {
+  width: 25px;
+  height: 22px;
+  padding: 6px 10px;
+  background: url("../img/header.png") no-repeat;
+  display: block;
+  background-position: 0 -182px;
+}
+.logo-gwc a .gwc-span2 {
+  display: inline-block;
+  float: right;
+  width: 107px;
+  height: 35px;
+  font-size: 12px;
+  line-height: 35px;
+  margin-top: 3px;
+}
+.logo-gwc a .gwc-span2 p {
+  display: inline-block;
+  color: #666;
+}
+.logo-gwc a .gwc-span2 i {
+  display: inline-block;
+  width: 8px;
+  height: 14px;
+  background: url("../img/header.png") no-repeat;
+  background-position: -10px -32px;
+}
+
+/*导航部分*/
+.nav {
+  width: 87%;
+  height: 54px;
+  margin: 0 auto;
+}
+
+/*左边导航*/
+.nav-ul1 {
+  float: left;
+  margin-top: 16px;
+  margin-left: -25px;
+}
+.nav-ul1 .nav-li1 {
+  line-height: 37px;
+  height: 37px;
+  float: left;
+  padding: 0px 25px;
+  font-size: 15px;
+}
+.nav-ul1 .nav-li1 a {
+  color: #333;
+}
+
+/*右边导航*/
+.nav-ul2 {
+  float: right;
+  margin-top: 16px;
+}
+.nav-ul2 .nav-li2 {
+  float: left;
+  padding-left: 16px;
+}
+.nav-ul2 .nav-li2 a {
+  font-size: 12px;
+  color: #666;
+}
+.nav-ul2 .nav-li2 a span {
+  display: inline-block;
+  vertical-align: middle;
+  width: 20px;
+  height: 24px;
+}
+.nav-ul2 .nav-li2:nth-of-type(1) a span {
+  background-position: -10px -555px;
+}
+.nav-ul2 .nav-li2:nth-of-type(2) a span {
+  background-position: -10px -405px;
+}
+.nav-ul2 .nav-li2:nth-of-type(3) a span {
+  background-position: -10px -228px;
+}
+.nav-ul2 a:nth-of-type(1) span {
+  background: url("../img/header.png") no-repeat;
+}
+.nav-ul2 a:nth-of-type(2) span {
+  background: url("../img/header.png") no-repeat;
+}
+.nav-ul2 a:nth-of-type(3) span {
+  background: url("../img/header.png") no-repeat;
+}
+
+/*# sourceMappingURL=header.css.map */

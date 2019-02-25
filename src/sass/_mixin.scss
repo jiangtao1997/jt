@@ -1,0 +1,10 @@
+@mixin borderstyle($bwidth:1px,$bcolor:#ccc,$style:solid){
+   border:$bwidth $bcolor $style; 
+}
+@mixin imgulr($value){
+    background:url($value) no-repeat;
+}
+
+@mixin imgulrimg($value){
+    background-image:url($value);
+}

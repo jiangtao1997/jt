@@ -1,0 +1,254 @@
+@charset "utf-8";
+@import "mixin";
+//定义变量
+//页面全部 变量
+$width:100%;
+$height:100%;
+//页面顶部变量
+$dbfont-size:12px;//页面顶部字体大小
+$dbcolro:#ccc;//顶部字体颜色
+$dbheight:30px;//页面顶部高度
+$dbleft:left;
+$dbright:right;
+$margin-right:20px;//li 间隔
+
+
+//搜索部分变量和导航变量
+$color333:#333;
+$color666:#666;
+$ssfont:12px;
+
+
+/*最外框*/
+.Kuang{
+    width: $width;
+}
+/*页面顶部*/
+.top{
+    width: $width;
+    height: $dbheight;
+    background: black;
+    font-size: $dbfont-size;
+    color: $dbcolro;
+    line-height: $dbheight;
+}
+/*左边导航*/
+.top_left{
+        float: $dbleft;
+        margin-left: 80px;
+        .top_left-ul{
+            height: $dbheight;
+            .top_left-li{
+                float: $dbleft;
+                margin-right: $margin-right;
+            }
+        }
+    }
+/*右边导航*/
+.top_right{
+        float: $dbright;
+        margin-right: 70px;
+        .top_right-ul{
+            height: $dbheight;
+            .top_right-li{
+                float: left;
+                margin-right: $margin-right;
+            }
+        }
+   }
+
+
+
+/*//页面头部  (包括logo和搜索)*/   
+.header{
+    width: $width;
+    height: 142px;
+//  @include borderstyle(1px,red,solid);
+}
+/*logo和搜索部分*/
+    .logo{
+       width: 80%; 
+       height: 88px;
+       .logo-img{
+           width: 237px;
+           height: 88px;
+           @include imgulr("https://img0.fengqucdn.com/cmsres/20170329/030eede1-1185-4a2d-a2b6-c9c5a43316df.svg");
+           background-position: 0px -10px;
+           background-size:100% 120px ;
+           float: left;
+           margin-left: 80px;
+       }
+    }
+    
+    /*搜索部分*/
+       .logo-sousuo{
+           width: 412px;
+           height: 63px;
+           float: right;
+           margin-right: 0px;
+           margin-top: 23px;
+           .logo-input{
+               width: 334px;
+               height: 36px;
+               @include borderstyle(2px,#E73735,solid);
+               input{
+                   width: 304px;
+                   height: 36px;
+                   padding: 0 15px;
+                   border: none;
+               }
+               a{
+                   text-align: center;
+                   line-height: 40px;
+                   display: block;
+                   width: 76px;
+                   height: 40px;
+                   background-color:#E73735 ;
+                   color: white;
+                   margin-left: 335px;
+                   margin-top: -38px;
+               }
+           }
+           .logo-ul{
+               padding-top:9px ;
+               overflow: hidden;
+               .logo-li{
+                   font-size: $ssfont;
+                   float: left;
+                   padding: 0 9px;
+                   border-left:1px solid #ccc ;
+                   a{color: $color666;}
+               }
+               .logo-li:nth-of-type(1){
+                   border-left:none;
+                   padding-left: 0;
+               }
+           }
+           
+       }
+       /*购物车*/
+       .logo-gwc{
+           width: 180px;
+           height: 38px;
+           margin-left: 432px;
+           margin-top: -61px;
+           a{
+               width: 100%;
+               height: 100%;
+               background-color: #f7f7f7;
+               display: inline-block;
+                .gwc-span1{
+                    display: inline-block;
+                    width: 54px;
+                    height: 33px;
+                    float: left;
+                    margin-top: 3px;
+                    margin-left: 2px;
+                    background: white;
+                    position: relative;
+                    span{
+                        width: 23px;
+                        height: 24px;
+                        display: inline-block;
+                        position: absolute;
+                        background: red;
+                        left: 10px;
+                        top:-20px;
+                        @include imgulr("../img/header.png");
+                        background-position: -10px -103px;
+                    }
+                    em{
+                        width: 25px;
+                        height: 22px;
+                        padding: 6px 10px;
+                        @include imgulr("../img/header.png");
+                        display: block;
+                        background-position: 0 -182px;
+                    }  
+                }
+                .gwc-span2{
+                    display: inline-block;
+                    float: right;
+                    width: 107px;
+                    height: 35px;
+                    font-size: $ssfont;
+                    line-height: 35px;
+                    margin-top: 3px;
+                    p{
+                        display: inline-block;
+                        color: $color666;
+                    }
+                    i{
+                        display: inline-block;
+                        width: 8px;
+                        height: 14px;
+                        @include imgulr("../img/header.png");
+                        background-position: -10px -32px;
+                    }
+                }
+           }
+       }
+    
+    
+/*导航部分*/
+    .nav{
+        width: 87%;
+        height: 54px;
+        margin: 0 auto;
+    }
+    /*左边导航*/
+    .nav-ul1{
+        float: left;
+        margin-top: 16px;
+        margin-left: -25px;
+        .nav-li1{
+            line-height: 37px;
+            height: 37px;
+            float: left;
+            padding:0px 25px;
+            font-size: 15px;
+            a{
+                color: $color333;
+            }
+        }
+    }
+    /*右边导航*/
+    .nav-ul2{
+        float: right;
+        margin-top: 16px;
+        .nav-li2{
+            float: left;
+            padding-left: 16px;
+            a{
+                font-size: $ssfont;
+                color: $color666;
+                span{
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 20px;
+                    height: 24px;
+                }
+            }
+        }
+        
+        .nav-li2:nth-of-type(1) a span{
+                background-position: -10px -555px;
+            }
+        .nav-li2:nth-of-type(2) a span{
+                background-position: -10px -405px;
+            }
+        .nav-li2:nth-of-type(3) a span{
+                background-position: -10px -228px;
+            }
+            
+            @each $animal,$img in (a,header),
+                    {
+                        @for $i from 1 through 3{
+                            #{$animal}:nth-of-type(#{$i}) span{
+                                @include imgulr("../img/#{$img}.png");
+                            }
+                        }
+                    }
+        
+        
+    }

@@ -8,23 +8,13 @@ define(['config'],function(){//定义模块，依赖模块
 			$(this).addClass('active').siblings('li').removeClass('active');//链式操作的核心是最开始的元素对象
 			$contents.eq($(this).index()).addClass('show').siblings('div').removeClass('show');
 		});
-		//2.添加cookie
-		$.cookie('hehe','xixi12345',{expires:10});
 		
-		
-		//3.懒加载
-		require(['jqlazy'],function(){
-			$('img.lazy').lazyload({
-				effect:'fadeIn'
-			})
-		});
 	});
+	*/
 	
-	return {//自执行
-		getnum:(function(){
-			alert(mod1.rannum(99,120));
-		})()
-	}*/
+	//3.懒加载
+		
+	
 	
 	//滚动触发滚动条
 	require(['jquery'],function($){
@@ -71,13 +61,41 @@ define(['config'],function(){//定义模块，依赖模块
 			});
 		
 		
-		
-		
 		//轮播图
-		$('.Carousel .Carousel-ul-img li').on('click',function(){
-			alert(1);
-		})
 		
+		//点击时  ol li 背景变色
+		$('.Carousel-ol li').on('click',function(){
+			$(this).addClass('active').siblings('li').removeClass('active');
+			var $left=$(this).index();
+			var $width=$('.Carousel-ul-img li').prop('offsetWidth');
+			$('.Carousel-ul-img').css({'left':- $left * $width})
+		});
+		
+		//定时器
+		var $num=0;
+		var time=setInterval(function(){
+			$num++;
+			if($num>=$('.Carousel-ol li').length){
+				$num=0;
+			}
+			$('.Carousel-ol li').eq($num).addClass('active').siblings('li').removeClass('active');
+			var $width=$('.Carousel-ul-img li').prop('offsetWidth');
+			$('.Carousel-ul-img').css({'left':- $num * $width});
+		},4000);
+		//鼠标移入定时器停止/ 开启
+		$('.Carousel').hover(function(){
+			clearInterval(time);
+		},function(){
+			time=setInterval(function(){
+				$num++;
+				if($num>=$('.Carousel-ol li').length){
+					$num=0;
+				}
+				$('.Carousel-ol li').eq($num).addClass('active').siblings('li').removeClass('active');
+				var $width=$('.Carousel-ul-img li').prop('offsetWidth');
+				$('.Carousel-ul-img').css({'left':- $num * $width});
+			},4000);
+		});
 		
 		
 		
@@ -101,13 +119,20 @@ define(['config'],function(){//定义模块，依赖模块
 								<span>${value.price1}</span>
 								<strong>￥${value.price2}</strong>
 							</div>
+							<div class="hongg"></div>
 						</li>
+						
 					`;
 				});
 				$('.zhuti-left-ul').html($pinjie);
+				
 			});
 		
-		//排行
+		
+		
+		
+		
+		//热销排行
 		
 		$.ajax({
 			url:"http://10.31.162.17/diliuzhou/projectname/php/paihang/haitaodata.php",
@@ -133,7 +158,45 @@ define(['config'],function(){//定义模块，依赖模块
 				});
 				$('.zhuti-right-ul').html($pinjie);
 			});
+			
+			
+			
+		//返回顶部
 		
+		var $fanhui = $('.fanhui');
+		var timer = null;
+		$fanhui.on('click',function(){
+			var $hui = $(window).scrollTop();
+			timer = setInterval(function(){
+				$(window).scrollTop($hui-=20);
+				if($hui<=0){
+					clearInterval(timer);
+				}
+			},10);
+			
+		});
+		
+		$(window).on('scroll',function(){
+			var $ftop = $(window).scrollTop();
+			if($ftop>=400){
+				$fanhui.css('display','block')
+			}else{
+				$fanhui.css('display','none')
+			}
+		});
+		
+		
+		//懒加载
+		
+		require(['jqlazy'],function(){
+			$('img').addClass('lazy');
+			$('img').attr('data-original',function(){
+				return $(this).attr('src');
+			});
+			$("img .lazy").lazyload({
+					effect: "fadeIn"
+				});
+		});
 		
 	});
 });

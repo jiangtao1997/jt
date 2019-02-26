@@ -32,6 +32,7 @@ $ssfont:12px;
     font-size: $dbfont-size;
     color: $dbcolro;
     line-height: $dbheight;
+    a{color: $dbcolro;}
 }
 /*左边导航*/
 .top_left{
@@ -40,11 +41,32 @@ $ssfont:12px;
         .top_left-ul{
             height: $dbheight;
             .top_left-li{
+                width: 50px;
+                height: 30px;
+                position: relative;
                 float: $dbleft;
                 margin-right: $margin-right;
+                
             }
+            
         }
     }
+    
+    .right-box{
+        text-align: center;
+        line-height: 390px;
+        position: absolute;
+        z-index: 200;
+        left: 60%;
+        width: 242px;
+        height: 265px;
+        background: url('https://img0.fengqu.com/cmsres/20151218/05e07220-1923-411d-8f61-943a9e221bd6.png');
+        display: none;
+    }
+    li:hover .right-box{
+                display: block;
+            }
+    
 /*右边导航*/
 .top_right{
         float: $dbright;
@@ -293,11 +315,19 @@ $ssfont:12px;
     height: 400px;
     position: relative;
     overflow: hidden;
+    .xzuo{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: 0;
+        top: 200px;
+    }
 }
 
 /*轮播图图片*/
 .Carousel-ul-img{
-    
+    position: absolute;
+    left: 0;
     width: $width * 7;
     height: $width;
     .ul-img-li{
@@ -325,8 +355,13 @@ $ssfont:12px;
 .ol-div{
     width: $width;
     height: 20px;
-    margin-top: -46px;
     position: relative;
+    top: 350px;
+    .Carousel-ol{
+        .active{
+            background: red!important;
+        }
+    }
 }
 .Carousel-ol{
     position: absolute;
@@ -345,7 +380,9 @@ $ssfont:12px;
         line-height: 20px;
         border-radius:50% ;
         background: white;
+        cursor: pointer;
     }
+    
 }
 
 /*轮播图导航*/
@@ -477,7 +514,7 @@ $ssfont:12px;
                 border: 1px solid #e5e5e5;
                 margin-left: -1px;
                 margin-top: -1px;
-                
+                position: relative;
                 a{
                     display: inline-block;
                     width: 196px;
@@ -502,7 +539,11 @@ $ssfont:12px;
                     color: red;
                 }
                 strong{text-decoration: line-through;font-weight: normal;color: #999;}
+                .hongg{width: 100%;border: 1px solid red;position: absolute;left: 0;bottom: 2px;display: none;}
             }
+            .zhuti-left-li:hover .hongg{display: block;}
+            
+            
             .zhuti-left-li:nth-of-type(3){
                     margin-left: 0px;
                     margin-top: -2px;
@@ -516,9 +557,11 @@ $ssfont:12px;
                     border-left: none;
                     border-right:none ;
                     margin-left: 1px;
+                    .hongg{bottom: 3px;}
                 }
                 .zhuti-left-li:nth-of-type(6){
                     margin-left: -2px;
+                    .hongg{bottom: 3px;}
                 }
         }
     }
@@ -673,4 +716,25 @@ $ssfont:12px;
     span{display: inline-block;margin-top: 10px;}
 }
 
-    
+  
+ .fanhui{
+     position: fixed;
+     bottom: 100px;
+     right: 50px;
+     width: 58px;
+     height: 56px;
+     background: rgba(0,0,0,0.3);
+     border-radius:10px;
+     text-align: center;
+     line-height: 56px;
+     display: none;
+     z-index: 10000;
+     span{
+         display: inline-block;
+         width: 16px;
+         height: 20px;
+         @include imgulrimg("../img/icon.png");
+         background-position:-63px -109px ;
+     }
+     
+ }  

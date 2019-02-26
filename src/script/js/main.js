@@ -10,4 +10,4 @@
 //});
 
 
-require(['style','details']);
+require(['style','details','cart','registor']);

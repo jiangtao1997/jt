@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="css/reset.css" />
 	<body>
 		
+		<div class="tou"></div>
+		
 		<div class="cart">
 			<div class="cart-box1">
 				<table>
@@ -26,11 +28,20 @@
 			</div>
 			<div class="cart-box2"><span>满88包邮</span></div>
 			<div class="cart-box3-kuang">
+				
+				<!--空时显示-->
+				<div id="kong">
+					<div class="tu"></div>
+					<div class="lianjie">
+						购物车空空如也
+						<a href="index.html">去逛逛吧~~</a>
+					</div>
+				</div>
 				<div class="cart-box3" style="display: none;">
 						<span class="th1">
 							<i><input type="checkbox" checked="" name="" class="" value=""/></i>
-							<a id="th1-a" href="#">
-								<img src="https://img0.fengqucdn.com/fq/sku_info/watermark/online/29245/cdab581d729d9c11c1814eb20f5204b6.jpeg" />
+							<a class="th1-a" href="#">
+								<img src="" alt="" />
 							</a>
 						</span>
 						<span class="th2">
@@ -39,21 +50,24 @@
 						</span>
 						
 						<span class="th3">
-							<del>169</del>
-							<div>59</div>
+							<del class="hd">169</del>
+							<div class="danjia">59</div>
 							<div class="th3-bj">限时促销</div>
 						</span>
 						<span class="th4">
 							<div id="updown">
-								<a class="down" style="cursor: pointer;">-</a><input class="jiajian-inp" type="text" /><a class="up" style="cursor: pointer;">+</a>
+								<a class="down" style="cursor: pointer;">-</a><input class="jiajian-inp" type="text" value="" /><a class="up" style="cursor: pointer;">+</a>
 							</div>
 							
 						</span>
-						<span class="th5">154</span>
+						<span class="th5"></span>
 						<span class="th6">
 							<div class="th6-bj">
 								
 							</div>
+						</span>
+						<span class="th7" style="display: none;" >
+							
 						</span>
 				</div>
 			</div>
@@ -61,19 +75,19 @@
 				<div class="box4-left">
 					<th>
 						<input type="checkbox" checked="" name="" class="quanxuan"  value="" /> 全选
-						<a>删除所有商品</a>
+						<a class="shanchu" style="cursor: pointer;">删除所有商品</a>
 					</th>
 				</div>
 				<div class="box4-right">
 					<ul class="box4-right-ul">
-						<li class="box4-right-li"><span>实付金额满88元包邮</span><strong>总价格<em>￥0</em></strong></li>
-						<li class="box4-right-li"><span>　　　　　&nbsp;已选商品</span><strong>已节省<em>￥0</em></strong></li>
+						<li class="box4-right-li zongjia"><span>实付金额满88元包邮</span><strong id="strongs">总价格<em></em></strong></li>
+						<li class="box4-right-li jiesheng"><span>　　　　　&nbsp;已选商品</span><strong id="js">已节省<em></em></strong></li>
 					</ul>
 					<button>去结算</button>
 				</div>
 			</div>
-			
 		</div>
+		
 		<script src="script/thirdplugins/require.js" defer async="true" data-main="script/js/main.js"></script>
 	</body>
 </html>

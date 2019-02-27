@@ -339,6 +339,9 @@ li:hover .right-box {
   top: -20px;
   background: url("../img/header.png") no-repeat;
   background-position: -10px -103px;
+  text-align: center;
+  line-height: 24px;
+  color: white;
 }
 .logo-gwc a .gwc-span1 em {
   width: 25px;

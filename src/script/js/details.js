@@ -30,6 +30,66 @@ define(['config'],function(){//定义模块，依赖模块
 						$('.fd-li').find('img').attr('src',$fd);
 				});
 				
+				
+				//放大镜
+				
+				var imid = $(".fd-li");//大图
+				var ibig = $(".big");//放大的图的 框
+				var ismall = $(".fangdj-ul li").find('img');//小图
+				var tbig = $(".big img");//放大的图
+				var xiangqing = $('.xq');
+				
+				
+				ismall.each(function(i) {
+				    $(this).click(function() {
+				        $(".mid img").attr("src", midArr[i])
+				        tbig.attr("src", bigArr[i])
+				        ismall.removeClass("active")
+				        $(this).addClass("active")
+				    })
+				    imid.mousemove(function(a) {
+				        var evt = a || window.event
+				        ibig.css('display', 'block');
+				        xiangqing.css('display', 'none');
+				        
+				        var tu = $(this).find('img').attr('src');
+				        tbig.attr('src',tu);
+				        
+				        
+				        var y = evt.clientY - ($(".fd-li").offset().top - $(document).scrollTop()) - 87;
+				        var x = evt.clientX - ($(".fd-li").offset().left - $(document).scrollLeft()) - 87;
+						
+				        if (x <= 0) {
+				            x = 0;
+				        }
+				        if (y <= 0) {
+				            y = 0;
+				        }
+				        if (x >= 475) {
+				            x = 475
+				        }
+				        if (y >= 475) {
+				            y = 475
+				        }
+				        $("span").css({
+				            'left': x,
+				            'top': y
+				        })
+				        var yy = y / 350 * 500
+				        var xx = x / 350 * 500
+				        tbig.css({
+				            'left': -xx,
+				            'top': -yy
+				        })
+				    })
+				    imid.mouseout(function() {
+				        ibig.css('display', 'none');
+				        xiangqing.css('display', 'block');
+				    })
+				    
+				})
+				
+				
 			});
 			
 			
@@ -66,7 +126,7 @@ define(['config'],function(){//定义模块，依赖模块
 				num=1;
 				alert('最少选购一个');
 			}
-			$('#cont').val(num)
+			$('#cont').val(num);
 		});
 		
 		$('.shuliang .jia').on('click',function(){
@@ -75,8 +135,37 @@ define(['config'],function(){//定义模块，依赖模块
 				num=10;
 				alert('最多选购十个');
 			}
-			$('#cont').val(num)
+			$('#cont').val(num);
 		});
+		
+		
+		//放大镜效果
+		
+		
+		
+		
+//		<div class="wai">
+//	    <div class="mid">
+//	        <img src="http://www.jq22.com/img/cs/500x500-1.png">
+//	        <span></span>
+//	    </div>
+//	    <div class="small">
+//	        <img class="active" src="http://www.jq22.com/img/cs/500x500-1.png">
+//	        <img src="http://www.jq22.com/img/cs/500x500-2.png">
+//	        <img src="http://www.jq22.com/img/cs/500x500-3.png">
+//	    </div>
+//	</div>
+//	
+//	<div class="big">
+//	    <img src="http://www.jq22.com/img/cs/500x500-1.png">
+//	</div>
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

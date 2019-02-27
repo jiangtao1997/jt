@@ -10,11 +10,22 @@ define(['config'],function(){//定义模块，依赖模块
 					users:$user.val()
 				},
 				dataType:'json',
-				success:function(data){
-					console(data);
-				}
 			}).done(function(data){
+				
+				
 				console.log(data);
+					if(!data){
+//							oSpan.innerHTML='√';
+//							oSpan.style.color='green';
+//							usernameflag=true;
+						alert('成功');
+					}else{
+//							oSpan.innerHTML='改手机号码已被注册';
+//							oSpan.style.color='red';
+//							usernameflag=false;
+						alert('失败');
+					}
+				
 			});
 		
 		

@@ -11,6 +11,8 @@
 		}else{//不存在
 			echo false;
 		}
+	}else{
+		echo "非法操作";
 	}
 	
 	
@@ -24,7 +26,7 @@
 		mysql_query("insert user values(NULL,'$user','$pass')");
 		
 		//3.跳转到登陆页面
-		header('location:../src/login.html');
+		header('location:http://10.31.162.17/diliuzhou/projectname/src/registor.html');
 	}
 	
 

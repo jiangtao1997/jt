@@ -68,10 +68,28 @@ body {
   border: 1px solid #eee;
   float: right;
   margin-left: 10px;
+  position: relative;
 }
 .fangdj .fangdj-fd img {
   width: 100%;
   height: 100%;
+}
+.fangdj .big {
+  width: 470px;
+  height: 470px;
+  position: absolute;
+  top: 93px;
+  right: 225px;
+  display: none;
+  overflow: hidden;
+}
+.fangdj .big img {
+  width: 200%;
+  height: 200%;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 /*详情*/

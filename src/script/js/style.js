@@ -12,12 +12,12 @@ define(['config'],function(){//定义模块，依赖模块
 	});
 	*/
 	
-	//3.懒加载
+	
 		
 	
 	
 	//滚动触发滚动条
-	require(['jquery'],function($){
+	require(['jquery','jqcookie'],function($,coolie){
 		var $box = $('.fudong');
 		var $uli = $('.fudong-ul li a').not($('.active'));
 		$(window).on('scroll',function(){
@@ -59,6 +59,22 @@ define(['config'],function(){//定义模块，依赖模块
 					'color':'#333'
 				})
 			});
+		
+		
+		
+		//购物车数量
+		if($.cookie('cookienum')){
+			var $sl = $.cookie('cookienum').split(',');
+			function sum(arr) {
+			    return eval($sl.join("+"));
+			};
+			
+			$('.gwc-span1').find('span').html(sum());
+			$('.fudong-gwc').find('i').html(sum());
+		}else{
+			$('.gwc-span1').find('span').html(0);
+			$('.fudong-gwc').find('i').html(0);
+		}
 		
 		
 		//轮播图

@@ -209,6 +209,10 @@ $ssfont:12px;
                         top:-20px;
                         @include imgulr("../img/header.png");
                         background-position: -10px -103px;
+                        text-align: center;
+                        line-height: 24px;
+                        color: white;
+                        
                     }
                     em{
                         width: 25px;

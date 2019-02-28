@@ -47,8 +47,7 @@ define(['config'],function(){//定义模块，依赖模块
 				        ismall.removeClass("active")
 				        $(this).addClass("active")
 				    })
-				    imid.mousemove(function(a) {
-				        var evt = a || window.event
+				    imid.mousemove(function(evt) {
 				        ibig.css('display', 'block');
 				        xiangqing.css('display', 'none');
 				        
@@ -139,35 +138,20 @@ define(['config'],function(){//定义模块，依赖模块
 		});
 		
 		
-		//放大镜效果
-		
-		
-		
-		
-//		<div class="wai">
-//	    <div class="mid">
-//	        <img src="http://www.jq22.com/img/cs/500x500-1.png">
-//	        <span></span>
-//	    </div>
-//	    <div class="small">
-//	        <img class="active" src="http://www.jq22.com/img/cs/500x500-1.png">
-//	        <img src="http://www.jq22.com/img/cs/500x500-2.png">
-//	        <img src="http://www.jq22.com/img/cs/500x500-3.png">
-//	    </div>
-//	</div>
-//	
-//	<div class="big">
-//	    <img src="http://www.jq22.com/img/cs/500x500-1.png">
-//	</div>
-		
-		
-		
-		
-		
-		
-		
-		
-		
+		//点击查看更多
+		var $kg = true;
+		$('#gd').on('click',function(){
+			if($kg){
+				$('.b3-3').css({'display':'block'});
+				$(this).html("收起");
+				$kg = false;
+			}else{
+				$('.b3-3').css('display','none');
+				$(this).html("更多优惠");
+				$kg = true;
+			}
+			
+		})
 		
 	});
 });

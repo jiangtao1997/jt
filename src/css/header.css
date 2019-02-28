@@ -26,6 +26,9 @@
   float: left;
   margin-right: 20px;
 }
+.top_left a {
+  color: #C0C0C0;
+}
 
 /*右边导航*/
 .top_right {

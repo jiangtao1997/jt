@@ -39,7 +39,7 @@ define(['config'],function(){//定义模块，依赖模块
     						clonegoodslist.css('display','block');
     						//计算单价
     						clonegoodslist.find('.th5').html((value.price1 * num).toFixed(2));
-    						clonegoodslist.find('.th7').html(((value.price2 - value.price1) * num).toFixed(2));
+    						clonegoodslist.find('.th7').html(((value.price2 - value.price1) * num));
 							$('.cart-box3-kuang').append(clonegoodslist);
 							priceall();
 							kong();
@@ -164,7 +164,7 @@ define(['config'],function(){//定义模块，依赖模块
 		function singlegoodsprice(obj) { //obj:当前元素
 			var $dj = parseFloat(obj.parents('.cart-box3').find('.th3 .danjia').html());//单价
 		    var $cnum = parseInt(obj.parents('.cart-box3').find('#updown input').val());//数量
-		    return ($dj * $cnum).toFixed(2);//结果
+		    return ($dj * $cnum);//结果
 		}
     	
     	//6.计算总价和总的商品件数，必须是选中的商品。
@@ -180,8 +180,8 @@ define(['config'],function(){//定义模块，依赖模块
 			  }
 			  
 			});
-			$('#strongs em').html('￥'+$count.toFixed(2));
-			$('#js em').html('￥'+$guoqu.toFixed(2));
+			$('#strongs em').html('￥'+$count);
+			$('#js em').html('￥'+$guoqu);
 			
 		}
     	

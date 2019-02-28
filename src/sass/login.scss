@@ -7,7 +7,8 @@ $height:100%;
 .login-kuang{
     width: 520px;
     height: 425px;
-    margin: 0 auto;
+    margin: 50px auto;
+    border: 1px solid #a9a9a9;
     border-top: 2px solid red;
     background: white;
     h2:nth-of-type(1){
@@ -19,7 +20,6 @@ $height:100%;
             width: 16px;
             height: 16px;
             float: right;
-            @include imgulrimg("../img/icon.png");
             background-position: 628px 0px;
         }
     }
@@ -41,7 +41,8 @@ $height:100%;
         .form-li{
             width: $width;
             height: 54px;
-            margin-top: 10px;
+            margin-top: 15px;
+            position: relative;
             input{width:$width;height: $height;padding-left: 16px;}
         }
     }

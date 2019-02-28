@@ -26,7 +26,7 @@
 		mysql_query("insert user values(NULL,'$user','$pass')");
 		
 		//3.跳转到登陆页面
-		header('location:http://10.31.162.17/diliuzhou/projectname/src/registor.html');
+		header('location:http://10.31.162.17/diliuzhou/projectname/src/login.html');
 	}
 	
 

@@ -9,9 +9,6 @@ body {
 }
 
 /*导航*/
-.xqy-nav {
-  border: 1px solid red;
-}
 .xqy-nav .xqy-ul {
   width: 80%;
   height: 100%;
@@ -211,10 +208,24 @@ body {
   font-size: 14px;
 }
 .jiage-b3 .b3-2 a:nth-of-type(2) {
+  color: #666;
+  font-size: 14px;
+  text-indent: -20px;
+  border: 1px solid red;
+  display: inline-block;
+  width: 30px;
+  margin-left: -20px;
   display: none;
 }
 .jiage-b3 .b3-3 {
   display: none;
+  width: 102%;
+  height: 30px;
+  border: 1px solid #fddcdc;
+  font-size: 12px;
+  color: #666;
+  margin-left: -2%;
+  text-indent: 30px;
 }
 
 /*选择*/
@@ -237,10 +248,10 @@ body {
   margin-bottom: 20px;
 }
 .xuanze2 .xianze2-li span {
-  color: #999;
+  color: #666;
   display: inline-block;
   margin-right: 30px;
-  font-size: 14px;
+  font-size: 12px;
 }
 .xuanze2 .xianze2-li .gg {
   border: 1px solid #BDBDBD;

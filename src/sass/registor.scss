@@ -7,9 +7,11 @@ $height:100%;
 .login-kuang{
     width: 520px;
     height: 425px;
-    margin: 0 auto;
+    margin: 50px auto;
+    border: 1px solid #a9a9a9;
     border-top: 2px solid red;
     background: white;
+    
     h2:nth-of-type(1){
         width: 90%;
         height: 16px;
@@ -19,7 +21,6 @@ $height:100%;
             width: 16px;
             height: 16px;
             float: right;
-            @include imgulrimg("../img/icon.png");
             background-position: 628px 0px;
         }
     }
@@ -34,7 +35,7 @@ $height:100%;
 }
 
 
-/*登录部分*/
+/*注册部分*/
     .form-ul{
         width: 420px;
         margin: 30px auto;
@@ -42,31 +43,42 @@ $height:100%;
             width: $width;
             height: 54px;
             margin-top: 10px;
+            position: relative;
             input{width:$width;height: $height;padding-left: 16px;}
+            span{
+                position: absolute;
+                display: inline-block;
+                width: 120px;
+                height: 20px;
+                right: 260px;
+                top:80%;
+                z-index: 100;
+                background: white;
+                font-size: 12px;
+                text-align: center;
+                line-height: 20px;
+                display: none;
+            }
         }
         .form-li:nth-of-type(2){position: relative;}
         .form-li:nth-of-type(2) a{display: inline-block;height: 60%;line-height: 30px; position: absolute;right: 20px;color: #999;font-size: 12px;top: 15px;border-left: 1px solid #999;padding-left: 5px;}
         .form-li:nth-of-type(1){
             width: 450px;
             input:nth-of-type(1){
-                width: 132px;
-                height: 54px;
-            }
-            input:nth-of-type(2){
-                margin-left: 10px;
-                padding-left: 60px;
-                width: 210px;
+                width: 93.5%;
                 height: 54px;
             }
         }
         
     }
     
-    /*登录部分*/
+    
+    /*注册部分*/
     .denglu{
         width: 420px;
         margin: 0 auto;
-        button{
+        .submit{
+            display: inline-block;
             width: 150px;
             height: 40px;
             background: #E73736;
@@ -79,7 +91,7 @@ $height:100%;
         }
         em{display: inline-block;height: 40px;line-height: 40px; float: right; font-style: normal;font-size: 12px;}
     }
-    /*登录方式*/
+    /*注册方式*/
    .dl-fangshi{
        width: 420px;
        margin: 50px auto;

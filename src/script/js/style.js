@@ -202,6 +202,29 @@ define(['config'],function(){//定义模块，依赖模块
 		});
 		
 		
+		
+		
+		//获取当前登录的名字
+		if($.cookie('user')){
+			$('#yh').html($.cookie('user')+"欢迎回来");
+			$('#tc').css('display','none');
+			$('.zhuce').find('span').html("退出登录");
+			$('.zhuce').find('span').css('display','block');
+			if($('.zhuce').find('span').html()=="退出登录"){
+				$('.zhuce').find('span').on('click',function(){
+					$('.zhuce').find('span').css('display','none');
+					$('#tc').css('display','block');
+					$('#yh').html('登录');
+					$.cookie('user','',{expires:-1});
+				})
+			}
+		}else{
+			$('#yh').html('登录');
+			$('#tc').html("注册");
+		};
+		
+		
+		
 		//懒加载
 		
 		require(['jqlazy'],function(){
@@ -213,6 +236,48 @@ define(['config'],function(){//定义模块，依赖模块
 					effect: "fadeIn"
 				});
 		});
+		
+		
+		//搜索
+		
+		//https://www.cnrmall.com/search/suggest.json?term=
+		
+		$('#sousuo').on('input',function(){
+			$('.xiala-ul').css('display','block');
+			var $ss = $('#sousuo').val();
+			$.ajax({
+				type:'get',
+				url:"http://10.31.162.17/diliuzhou/projectname/php/sousuo.php",
+				data:{
+					sou:$ss
+				},
+				async:true
+			}).done(function(data){
+				var $pinjie = '';
+				console.log(data);
+				$.each(JSON.parse(data),function(index,value){
+					
+					$pinjie+=`
+						<li class="xiala"><a class="xiala-a" href="#">${value}</a></li>
+					`;
+				});
+				$('.xiala-ul').html($pinjie);
+				if($('#sousuo').val()==''){
+					$('.xiala-ul').css('display','none');
+				}
+			});
+			
+		});
+		
+		
+		
+		$('#sousuo').on('blur',function(){
+			if($('#sousuo').val()==''){
+				$('.xiala-ul').css('display','none');
+			}
+		});
+		
+		
 		
 	});
 });

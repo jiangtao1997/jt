@@ -4,7 +4,7 @@ define(['config'],function(){//定义模块，依赖模块
 	require(['jquery','jqcookie','jqvalidate'],function($,cookie,validate){
 		
 		
-		$('.tou').load('header.html',function(){
+		$('.logintou').load('header.html',function(){
 			
 			$('.gwc-span1').find('span').css({'color':'white','text-align':'center','line-height':'24px'})
 			

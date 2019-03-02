@@ -1,6 +1,7 @@
 const gulp=require('gulp');//加载gulp插件
 const gulpsass=require('gulp-sass');
 const html=require('gulp-minify-html');
+const cleanCSS = require('gulp-clean-css');
 const concat=require('gulp-concat');
 const uglify=require('gulp-uglify');
 const rename=require('gulp-rename');
@@ -28,6 +29,16 @@ gulp.task('runsass',function(){
 	.pipe(gulp.dest('dist/css/'))
 });
 
+// 压缩 css 文件
+gulp.task('csscompress', function() {
+    // 1. 找到文件
+  return  gulp.src('src/css/reset.css')
+    // 2. 压缩文件
+        .pipe(cleanCSS())
+        // 3. 另存压缩后的文件
+        .pipe(gulp.dest('dist/css/'));
+});
+
 
 //4.压缩html
 gulp.task('uglifyhtml',function(){
@@ -38,14 +49,24 @@ gulp.task('uglifyhtml',function(){
 
 
 //5.合并压缩js
-gulp.task('alljs',function(){
-	return gulp.src('src/js/*.js')
-	.pipe(concat('all.js'))//合并以及重命名
-	.pipe(gulp.dest('dist/script/js'))//输出
-	.pipe(rename('all.min.js'))//重命名
-	.pipe(uglify())//压缩
-	.pipe(gulp.dest('dist/script/js'));
+//gulp.task('alljs',function(){
+//	return gulp.src('src/script/js/*.js')
+//	.pipe(concat('all.js'))//合并以及重命名
+//	.pipe(gulp.dest('dist/script/js'))//输出
+//	.pipe(rename('all.min.js'))//重命名
+//	.pipe(uglify())//压缩
+//	.pipe(gulp.dest('dist/script/js'));
+//});
+
+gulp.task('jscompress', function() {
+    // 1. 找到文件
+   return gulp.src('src/script/js/*.js')
+    // 2. 压缩文件
+        .pipe(uglify())
+        // 3. 另存压缩后的文件
+        .pipe(gulp.dest('dist/script/js'));
 });
+
 
 
 //6.图片的压缩--png
@@ -57,6 +78,24 @@ gulp.task('runimg',function(){
 	.pipe(gulp.dest('dist/img/'));
 });
 
+
+//7.es6转es5
+//安装如下插件
+//gulp-babel
+//gulp-core
+//gulp-preset-es2015
+/*gulp.task("babeljs", function () {
+    gulp.src("js/index.js")  
+    .pipe(babel({
+     	presets:['es2015']
+    }))
+    .pipe(gulp.dest("dist/"));  
+ });  
+gulp.task("watchjs",function(){
+    gulp.watch('js/index.js',function(){
+    	gulp.run('babeljs');
+    });
+});*/
 //最终监听的写法
 //监听需要任务执行一次之后进行操作。
 /* gulp.task('default',function(){
@@ -64,11 +103,11 @@ gulp.task('runimg',function(){
 	watch(['src/sass/style.scss','src.html','src/js.js'],gulp.parallel('runsass','uglifyhtml','alljs'));
 }); */
 
-gulp.task('default',function(){
+/*gulp.task('default',function(){
 	//watch的第一个参数监听的文件的路径，第二个参数是监听运行的任务名
 	watch(['src/*.html','src/sass/*.scss','src/js/*.js'],gulp.parallel('uglifyhtml','runsass','alljs'));  //添加了 gulp.series 和 gulp.parallel 方法用于组合任务
 	//gulp.parallel() –并行运行任务 
 	//gulp.series() –运行任务序列,拥有先后顺序。 
-});
+});*/
 
 

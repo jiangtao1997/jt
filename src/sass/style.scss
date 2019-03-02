@@ -489,7 +489,6 @@ $ssfont:12px;
 .section_1{
     margin-top: 30px;
     width: $width;
-    height: 705px;
     
     h2{
         width: 87%;
@@ -521,11 +520,12 @@ $ssfont:12px;
 /*主题内容*/
 .zhuti-nr{
     width: 87%;
-    margin: 0 auto;
+    margin: 30px auto;
     border: 1px solid #e5e5e5;
     border-left:none ;
     height: 660px;
     overflow: hidden;
+    
     /*左边*/
     .zhuti-left{
         width: 949px;
@@ -653,7 +653,6 @@ $ssfont:12px;
     background: #3E3A39;
     color: white;
     padding-top: 1px;
-    position: relative;
     z-index: 100;
     .footer1-ul{
         width: 80%;
